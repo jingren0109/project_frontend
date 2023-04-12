@@ -1,15 +1,12 @@
 import main from "../assets/images/main.svg";
 import Wrapper from "../assets/wrappers/LandingPage";
-import { Logo } from "../components";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
     <Wrapper>
       <main>
-        <nav>
-          <Logo />
-        </nav>
+        <nav></nav>
         <div className="container page">
           {/* info */}
           <div className="info">
@@ -24,11 +21,11 @@ const Landing = () => {
               LendWise aims to provide a seamless experience for borrowers,
               while also minimizing risk and increasing efficiency for lenders.
             </p>
-            <Link to="/register" className="btn btn-hero">
-              Login/Register
+            <Link to="/predict" className="btn btn-hero">
+              Predict
             </Link>
           </div>
-          <img src={main} alt="job hunt" className="img main-img" />
+          <img src={main} alt="loan prediction" className="img main-img" />
         </div>
       </main>
     </Wrapper>
