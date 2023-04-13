@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       <div>
-        <h3 className="logo-text">LendWise</h3>
+        <h3 className="logo-text">LendWise loan prediction</h3>
       </div>
     </Wrapper>
   );

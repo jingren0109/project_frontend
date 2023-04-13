@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.nav`
   height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
   .logo {
     display: flex;
@@ -80,5 +81,5 @@ const Wrapper = styled.nav`
       display: block;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;
