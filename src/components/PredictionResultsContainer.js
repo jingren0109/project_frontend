@@ -29,11 +29,14 @@ const PredictionResultsContainer = () => {
     <Wrapper>
       <h5>Prediction Result</h5>
       <div className="predictionResults">
-        <div>Prediction Description: </div>
-        {prediction_result?.description}
-        <br />
-        <div>Prediction Value: </div>
-        {prediction_result?.value}
+        <div>
+          Rate: <br />
+          {prediction_result?.value}
+        </div>
+        <div>
+          Explanation: <br />
+          {prediction_result?.description}
+        </div>
       </div>
     </Wrapper>
   );
