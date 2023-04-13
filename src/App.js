@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/predict" element={<AddPrediction />} />
+        <Route path="predict" element={<AddPrediction />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <ToastContainer position="top-center" />
