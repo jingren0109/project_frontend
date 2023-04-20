@@ -75,7 +75,7 @@ export const requestPredictionThunk = async (_, thunkAPI) => {
     skipEmptyString: true,
     skipNull: true,
   });
-  const url = `/api/predict?${queryString}`;
+  const url = `/api/predict/nn?${queryString}`;
 
   try {
     const resp = await customFetch.get(url);
