@@ -8,6 +8,11 @@ const Wrapper = styled.section`
   & > h5 {
     font-weight: 700;
   }
+  .section-style {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
   .predictionResults {
     display: grid;
     grid-template-columns: 1fr;

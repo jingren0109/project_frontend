@@ -18,7 +18,7 @@ const PredictionResultsContainer = () => {
   if (!prediction_result) {
     return (
       <Wrapper>
-        <h4>Prediction Result</h4>
+        <h4>Prediction Results</h4>
         <div className="predictionResults">
           <div>No results to display.</div>
         </div>
@@ -27,8 +27,38 @@ const PredictionResultsContainer = () => {
   }
   return (
     <Wrapper>
-      <h5>Prediction Result</h5>
-      <div className="predictionResults">
+      <h3>Prediction Results</h3>
+      <div className="predictionResults section-style">
+        <h5>Nerual Network</h5>
+        <br />
+        <div>
+          Rate: <br />
+          {prediction_result
+            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            : ""}
+        </div>
+        <div>
+          Explanation: <br />
+          {prediction_result?.description}
+        </div>
+      </div>
+      <div className="predictionResults section-style">
+        <h5>eXtreme Gradient Boosting</h5>
+        <br />
+        <div>
+          Rate: <br />
+          {prediction_result
+            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            : ""}
+        </div>
+        <div>
+          Explanation: <br />
+          {prediction_result?.description}
+        </div>
+      </div>
+      <div className="predictionResults section-style">
+        <h5>NN & XGB Weighted Ensemble</h5>
+        <br />
         <div>
           Rate: <br />
           {prediction_result
