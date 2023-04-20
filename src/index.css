@@ -221,7 +221,7 @@ ul {
 }
 .form-label {
   display: block;
-  font-size: var(--smallText);
+  font-size: 0.875rem;
   margin-bottom: 0.5rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
