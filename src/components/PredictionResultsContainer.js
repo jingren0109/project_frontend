@@ -34,12 +34,12 @@ const PredictionResultsContainer = () => {
         <div>
           Rate: <br />
           {prediction_result
-            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            ? `${(prediction_result?.nn?.value * 100).toFixed(4)}%`
             : ""}
         </div>
         <div>
           Explanation: <br />
-          {prediction_result?.description}
+          {prediction_result?.nn?.description}
         </div>
       </div>
       <div className="predictionResults section-style">
@@ -48,12 +48,12 @@ const PredictionResultsContainer = () => {
         <div>
           Rate: <br />
           {prediction_result
-            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            ? `${(prediction_result?.xgb?.value * 100).toFixed(4)}%`
             : ""}
         </div>
         <div>
           Explanation: <br />
-          {prediction_result?.description}
+          {prediction_result?.xgb?.description}
         </div>
       </div>
       <div className="predictionResults section-style">
@@ -62,12 +62,12 @@ const PredictionResultsContainer = () => {
         <div>
           Rate: <br />
           {prediction_result
-            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            ? `${(prediction_result?.ensemble?.value * 100).toFixed(4)}%`
             : ""}
         </div>
         <div>
           Explanation: <br />
-          {prediction_result?.description}
+          {prediction_result?.ensemble?.description}
         </div>
       </div>
     </Wrapper>

@@ -101,7 +101,7 @@ export const requestPredictionThunk = async (_, thunkAPI) => {
   ];
 
   const queryString = params.join("&");
-  const url = `/api/predict/nn?${queryString}`;
+  const url = `/api/predict?${queryString}`;
 
   try {
     const resp = await customFetch.get(url);
