@@ -245,9 +245,10 @@ const AddPrediction = () => {
           <div className="dashboard-page">
             <Wrapper>
               <form className="form">
-                <h4>Switch cases</h4>
+                <h3>Switch cases</h3>
                 <CasesBar />
                 <br />
+                <h5 className="section-style">Loan Details</h5>
                 <div className="form-center">
                   {/* loan_amnt */}
                   <FormRow
@@ -266,6 +267,19 @@ const AddPrediction = () => {
                     handleChange={handlePredictionInput}
                     list={term_options}
                   />
+                  {/* purpose */}
+                  <FormRowSelect
+                    name="purpose"
+                    value={purpose}
+                    description="A category provided by the borrower for the loan request."
+                    labelText="loan purpose"
+                    handleChange={handlePredictionInput}
+                    list={purpose_options}
+                  />
+                </div>
+                <br />
+                <h5 className="section-style">Borrower's Information</h5>
+                <div className="form-center">
                   {/* emp_length */}
                   <FormRowSelect
                     name="emp_length"
@@ -274,15 +288,6 @@ const AddPrediction = () => {
                     labelText="employment length"
                     handleChange={handlePredictionInput}
                     list={emp_length_options}
-                  />
-                  {/* home_ownership */}
-                  <FormRowSelect
-                    name="home_ownership"
-                    value={home_ownership}
-                    description="The home ownership status provided by the borrower during registration or obtained from the credit report."
-                    labelText="home onwership"
-                    handleChange={handlePredictionInput}
-                    list={home_ownership_options}
                   />
                   {/* annual_inc */}
                   <FormRow
@@ -293,24 +298,61 @@ const AddPrediction = () => {
                     description="The self-reported annual income provided by the borrower during registration."
                     handleChange={handlePredictionInput}
                   />
-                  {/* purpose */}
+                  {/* home_ownership */}
                   <FormRowSelect
-                    name="purpose"
-                    value={purpose}
-                    description="A category provided by the borrower for the loan request."
-                    labelText="loan purpose"
+                    name="home_ownership"
+                    value={home_ownership}
+                    description="The home ownership status provided by the borrower during registration or obtained from the credit report."
+                    labelText="home onwership"
                     handleChange={handlePredictionInput}
-                    list={purpose_options}
+                    list={home_ownership_options}
                   />
                   {/* dti */}
                   <FormRow
                     type="number"
                     name="dti"
                     labelText="debt-to-income ratio"
+                    disabled={true} // input is disabled
                     value={dti}
                     description="A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income."
                     handleChange={handlePredictionInput}
                   />
+                </div>
+                <br />
+                <h5 className="section-style">Joint Application</h5>
+                <div className="form-center">
+                  {/* application_type */}
+                  <FormRowSelect
+                    name="application_type"
+                    value={application_type}
+                    description="Indicates whether the loan is an individual application or a joint application with two co-borrowers."
+                    labelText="application type"
+                    handleChange={handlePredictionInput}
+                    list={application_type_options}
+                  />
+                  {/* annual_inc_joint */}
+                  <FormRow
+                    type="text"
+                    name="annual_inc_joint"
+                    labelText="combined annual income of co-borrowers"
+                    value={annual_inc_joint}
+                    description="The combined self-reported annual income provided by the co-borrowers during registration."
+                    handleChange={handlePredictionInput}
+                  />
+                  {/* dti_joint */}
+                  <FormRow
+                    type="text"
+                    name="dti_joint"
+                    labelText="combined debt-to-income ratio of co-borrowers"
+                    value={dti_joint}
+                    disabled={true} // input is disabled
+                    description="A ratio calculated using the co-borrowers' total monthly payments on the total debt obligations, excluding mortgages and the requested LC loan, divided by the co-borrowers' combined self-reported monthly income."
+                    handleChange={handlePredictionInput}
+                  />
+                </div>
+                <br />
+                <h5 className="section-style">Credit History</h5>
+                <div className="form-center">
                   {/* delinq_2yrs */}
                   <FormRow
                     type="number"
@@ -437,33 +479,10 @@ const AddPrediction = () => {
                     description="Months since most recent 90-day or worse rating."
                     handleChange={handlePredictionInput}
                   />
-                  {/* application_type */}
-                  <FormRowSelect
-                    name="application_type"
-                    value={application_type}
-                    description="Indicates whether the loan is an individual application or a joint application with two co-borrowers."
-                    labelText="application type"
-                    handleChange={handlePredictionInput}
-                    list={application_type_options}
-                  />
-                  {/* annual_inc_joint */}
-                  <FormRow
-                    type="text"
-                    name="annual_inc_joint"
-                    labelText="combined annual income of co-borrowers"
-                    value={annual_inc_joint}
-                    description="The combined self-reported annual income provided by the co-borrowers during registration."
-                    handleChange={handlePredictionInput}
-                  />
-                  {/* dti_joint */}
-                  <FormRow
-                    type="text"
-                    name="dti_joint"
-                    labelText="combined debt-to-income ratio of co-borrowers"
-                    value={dti_joint}
-                    description="A ratio calculated using the co-borrowers' total monthly payments on the total debt obligations, excluding mortgages and the requested LC loan, divided by the co-borrowers' combined self-reported monthly income."
-                    handleChange={handlePredictionInput}
-                  />
+                </div>
+                <br />
+                <h5 className="section-style">Loan Status and Payment</h5>
+                <div className="form-center">
                   {/* acc_now_delinq */}
                   <FormRow
                     type="number"

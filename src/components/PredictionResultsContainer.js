@@ -31,7 +31,9 @@ const PredictionResultsContainer = () => {
       <div className="predictionResults">
         <div>
           Rate: <br />
-          {prediction_result?.value}
+          {prediction_result
+            ? `${(prediction_result.value * 100).toFixed(4)}%`
+            : ""}
         </div>
         <div>
           Explanation: <br />

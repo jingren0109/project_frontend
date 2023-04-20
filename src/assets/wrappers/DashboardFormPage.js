@@ -9,6 +9,11 @@ const Wrapper = styled.section`
   h3 {
     margin-top: 0;
   }
+  .section-style {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
   .form {
     margin: 0;
     border-radius: 0;

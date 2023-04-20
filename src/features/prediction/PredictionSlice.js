@@ -58,8 +58,8 @@ const initialState = {
   inv_mths_since_last_major_derog: "",
   application_type: "Individual",
   application_type_options: ["Individual", "Joint app"],
-  annual_inc_joint: "",
-  dti_joint: "",
+  annual_inc_joint: "N/A",
+  dti_joint: "N/A",
   acc_now_delinq: "",
   tot_coll_amt: "",
   tot_cur_bal: "",
@@ -253,6 +253,29 @@ const predictionSlice = createSlice({
   reducers: {
     handleChange: (state, { payload: { name, value } }) => {
       state[name] = value;
+      if (name === "loan_amnt" || name === "annual_inc") {
+        const loanAmnt = parseFloat(state.loan_amnt);
+        const annualInc = parseFloat(state.annual_inc);
+        if (!isNaN(loanAmnt) && !isNaN(annualInc)) {
+          state.dti = ((loanAmnt / annualInc) * 100).toFixed(2);
+        }
+      }
+      if (name === "application_type") {
+        if (value === "Joint app") {
+          state.annual_inc_joint = "";
+          state.dti_joint = "";
+        } else {
+          state.annual_inc_joint = "N/A";
+          state.dti_joint = "N/A";
+        }
+      }
+      if (name === "loan_amnt" || name === "annual_inc_joint") {
+        const loanAmnt = parseFloat(state.loan_amnt);
+        const annualIncJoint = parseFloat(state.annual_inc_joint);
+        if (!isNaN(loanAmnt) && !isNaN(annualIncJoint)) {
+          state.dti_joint = ((loanAmnt / annualIncJoint) * 100).toFixed(2);
+        }
+      }
     },
     clearValues: () => {
       return {

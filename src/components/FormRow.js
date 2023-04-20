@@ -9,6 +9,7 @@ const FormRow = ({
   handleChange,
   labelText,
   description,
+  disabled = false, // new prop with default value of false
 }) => {
   // eslint-disable-next-line
   const [showDescription, setShowDescription] = useState(false);
@@ -40,6 +41,7 @@ const FormRow = ({
         name={name}
         value={value}
         onChange={handleChange}
+        disabled={disabled} // new prop for input disabled state
         className="form-input"
       />
     </div>
