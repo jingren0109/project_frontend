@@ -276,6 +276,16 @@ const predictionSlice = createSlice({
           state.dti_joint = ((loanAmnt / annualIncJoint) * 100).toFixed(2);
         }
       }
+      if (name === "inq_last_6mths") {
+        if (parseInt(value) === 0) {
+          state.inv_mths_since_recent_inq = "N/A";
+        }
+      }
+      if (name === "total_acc") {
+        if (parseInt(value) === 0) {
+          state.open_acc = "0";
+        }
+      }
     },
     clearValues: () => {
       return {
