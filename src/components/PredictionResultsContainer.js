@@ -1,6 +1,7 @@
 import Wrapper from "../assets/wrappers/PredictionResultsContainer";
 import { useSelector } from "react-redux";
 import Loading from "./Loading";
+import { toTitleCase } from "../utils/format";
 
 const PredictionResultsContainer = () => {
   const { isLoading, prediction_result } = useSelector(
@@ -68,6 +69,22 @@ const PredictionResultsContainer = () => {
         <div>
           Explanation: <br />
           {prediction_result?.ensemble?.description}
+        </div>
+      </div>
+      <div className="predictionResults section-style">
+        <h5>Borrower Loan Grade</h5>
+        <br />
+        <div>
+          Grade: <br />
+          {prediction_result ? prediction_result?.grade?.grade : ""}
+        </div>
+      </div>
+      <div className="predictionResults section-style">
+        <h5>Final Suggestions</h5>
+        <br />
+        <div>
+          Suggestions: <br />
+          {prediction_result ? toTitleCase(prediction_result?.suggestion) : ""}
         </div>
       </div>
     </Wrapper>

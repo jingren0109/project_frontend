@@ -892,7 +892,9 @@ const AddPrediction = () => {
                     </button>
                   </div>
                 </div>
-                <PredictionResultsContainer />
+                <div className="form-center">
+                  <PredictionResultsContainer />
+                </div>
               </form>
             </Wrapper>
           </div>
